@@ -20,11 +20,11 @@ Aşağıdakileri yap:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-let surucuYasi = 18;
+const surucuYasi = 18;
 if (surucuYasi > 18) {
-  console.log(true);
+  // console.log(true);
 } else {
-  console.log(false);
+  // console.log(false);
 }
 
 /*
@@ -44,7 +44,7 @@ let ikinciDeger = 15;
 
 if (ikinciDeger > birinciDeger) {
   birinciDeger = "Değer değişti.";
-  console.log(birinciDeger);
+  // console.log(birinciDeger);
 }
 
 /*
@@ -59,7 +59,7 @@ Aşağıdakileri yap:
 */
 let birthYear = "1999";
 birthYear = Number(birthYear);
-console.log(birthYear);
+// console.log(birthYear);
 /*
 Görev 1d - Çarpma
  
@@ -73,7 +73,7 @@ function carpma(a, b) {
   return a * b;
 }
 
-console.log(carpma(7, 4));
+// console.log(carpma(7, 4));
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -87,7 +87,7 @@ Aşağıdakileri yap:
 function kopeginYasi(kopekYas) {
   return kopekYas * 7;
 }
-console.log(kopeginYasi(13));
+// console.log(kopeginYasi(13));
 /* Görev 3 */
 /*
 Aşağıdakileri oyun isimli fonksiyonu kullanarak yap.
@@ -130,7 +130,7 @@ function oyun(oyuncu, bilgisayar) {
   }
 }
 
-console.log(oyun("Makas", "Kağıt"));
+// console.log(oyun("Makas", "Kağıt"));
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -164,7 +164,7 @@ const getComputerChoice = () => {
 // 👉 OYUN
 
 const rockPaperScissors = (player, computer) => {
-  console.log(`Oyuncu'nun seçimi ${player}, Bilgisayar'ın seçimi: ${computer}`);
+  // console.log(`Oyuncu'nun seçimi ${player}, Bilgisayar'ın seçimi: ${computer}`);
   //Beraberlik
   if (player == computer) {
     return "Beraberlik";
@@ -195,7 +195,7 @@ const rockPaperScissors = (player, computer) => {
   }
 };
 
-console.log(rockPaperScissors("Taş", getComputerChoice()));
+// console.log(rockPaperScissors("Taş", getComputerChoice()));
 /* Görev 4 : Metrik Dönüştürücü */
 
 //Görev 4a - Kilometreden Mil
@@ -242,9 +242,9 @@ let kucukMaymun = 5;
 function cocukSarkisi(kucukMaymun) {
   return `${kucukMaymun} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`;
 }
-for (kucukMaymun; kucukMaymun > 0; kucukMaymun--) {
-  console.log(cocukSarkisi(kucukMaymun));
-}
+// for (kucukMaymun; kucukMaymun > 0; kucukMaymun--) {
+//   console.log(cocukSarkisi(kucukMaymun));
+// }
 
 /* Görev 6 : Not Hesaplayıcı */
 
@@ -263,13 +263,13 @@ Aşağdakileri notHesapla fonksiyonunda yap.
 
 function notHesapla(sinavSonucu) {
   if (sinavSonucu >= 0 && sinavSonucu <= 100) {
-    if (sinavSonucu >= 90 && sinavSonucu <= 100) {
+    if (sinavSonucu >= 90) {
       return "A aldın";
-    } else if (sinavSonucu >= 80 && sinavSonucu <= 89) {
+    } else if (sinavSonucu >= 80) {
       return "B aldın";
-    } else if (sinavSonucu >= 70 && sinavSonucu <= 79) {
+    } else if (sinavSonucu >= 70) {
       return "C aldın";
-    } else if (sinavSonucu >= 60 && sinavSonucu <= 69) {
+    } else if (sinavSonucu >= 60) {
       return "D aldın";
     } else {
       return "F aldın";
@@ -290,19 +290,18 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(string) {
-  const sesliHarfler = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
-  let arr = Array.from(string);
-  let processedArr = [];
-  for (let i = 0; i < sesliHarfler.length; i++) {
-    if (arr.includes(sesliHarfler[i])) {
-      processedArr.push(sesliHarfler[i]);
+const sesliHarfler = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
+
+function sesliHarfSay(str) {
+  let counter = 0;
+  for (let i of str) {
+    if (sesliHarfler.includes(i)) {
+      counter++;
     }
   }
-  return `Girdiğiniz argüman ${processedArr.length} adet sesli harf içeriyor: ${processedArr}`;
+  return counter;
 }
-
-console.log(sesliHarfSayaci("asdeuifqwesapqü"));
+console.log(sesliHarfSay("deneme"));
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
